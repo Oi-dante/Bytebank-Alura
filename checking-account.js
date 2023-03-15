@@ -5,9 +5,9 @@ export class CurrentAccount{
     
 
 
-    set client(novoValue){
-        if(novoValue instanceof Client){
-            this._client = novoValue;
+    set client(newValue){
+        if(newValue instanceof Client){
+            this._client = newValue;
         }
     }
 
