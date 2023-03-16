@@ -1,51 +1,27 @@
+import { Account } from "./account.js";
 import { Client } from "./client.js";
 
-export class CurrentAccount{
+export class CurrentAccount extends Account{
+    //class account inheritance
     static NumberOfAccounts = 0;
-    
-
-
-    set client(newValue){
-        if(newValue instanceof Client){
-            this._client = newValue;
-        }
-    }
-
-    get client(){
-        return this._client;
-    }
-
-    get balance(){
-        return this._balance;
-    }
-
-    constructor(agency, client){
-        this.agency = agency;
-        this.client = client;
-        this._balance = 0
+    constructor(client, agency){
+        super(0, client, agency);
         CurrentAccount.NumberOfAccounts += 1;
     }
 
+    teste(){
+        super.teste();
+        console.log("teste na classe conta corrente")
+    }
+    
 
     withdraw(value){
-        if(this._balance >= value){
-            this._balance -= value;
-            return value;
+        let rate = 1.1;
+        const withdrawValue = rate * value;
+        if(this._balance >= withdrawValue){
+            this._balance -= withdrawValue;
+            return withdrawValue;
         }
     }
 
-    deposit(value){
-        if(value <= 0)
-        {
-            return;
-        } 
-        this._balance += value;           
-    }
-
-    tranferir(value, current){
-        
-        const valueDrawee = this.withdraw(value);
-        current.deposit(valueDrawee);
-        
-    }
 }

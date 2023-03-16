@@ -1,29 +1,9 @@
-export class SavingAccount{
+import { Account } from "./account.js";
+
+export class SavingAccount extends Account{
+    //class account inheritance
     constructor(balanceInitial, client, agency){
-        this._balance = balanceInitial;
-        this._client = client;
-        this._agency = agency;
-    }
-    
-    withdraw(value){
-        if(this._balance >= value){
-            this._balance -= value;
-            return value;
-        }
+        super(balanceInitial, client, agency)
     }
 
-    deposit(value){
-        if(value <= 0)
-        {
-            return;
-        } 
-        this._balance += value;           
-    }
-
-    tranferir(value, current){
-        
-        const valueDrawee = this.withdraw(value);
-        current.deposit(valueDrawee);
-        
-    }   
 }
