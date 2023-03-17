@@ -18,6 +18,11 @@ export class Account{
     get balance(){
         return this._balance;
     }
+
+    _balance(value, rate){
+        let rate = 1
+        return this._balance(value, rate)
+    }
     
 
     withdraw(value){
@@ -39,7 +44,4 @@ export class Account{
         
     }   
 
-    test(){
-        console.log("test in account class");
-    }
 }
