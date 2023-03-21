@@ -1,6 +1,6 @@
 import { Account } from "./account.js"
 
-export class salaryAccount extends Account{
+export class SalaryAccount extends Account{
     constructor(client){
         super(0, client, 100)
     }

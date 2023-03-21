@@ -25,7 +25,7 @@ export class Account{
     }
 
     withdraw(value){
-        
+        //abstract method
     }
     
 
