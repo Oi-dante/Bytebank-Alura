@@ -24,19 +24,18 @@ export class Account{
         return this._balance;
     }
 
-    // _balance(value, rate){
-    //     let rate = 1;
-    //     return this._balance(value, rate)
-    // }
+    withdraw(value){
+        
+    }
     
 
-    withdraw(value){
-        let rate = 1;
+    _balance(value){
         const withdrawValue = rate * value;
         if(this._balance >= withdrawValue){
             this._balance -= withdrawValue;
             return withdrawValue;
         }
+        return 0
     }
 
     deposit(value){

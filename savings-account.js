@@ -6,4 +6,9 @@ export class SavingAccount extends Account{
         super(balanceInitial, client, agency)
     }
 
+    withdraw(value){
+        const rate = 1.02;
+        return this._balance(value, rate);
+    }
+
 }
