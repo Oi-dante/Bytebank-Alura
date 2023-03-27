@@ -6,5 +6,10 @@ export class Client{
     constructor(nome, cpf){
         this.nome = nome;
         this._cpf = cpf;
+        this.password = this.password;
+    }
+
+    authenticar(){
+        return true;
     }
 }

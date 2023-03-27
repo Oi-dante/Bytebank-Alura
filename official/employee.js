@@ -12,6 +12,10 @@ export class Employee{
         return this.password;
     }
 
+    authenticar(password){
+        return password == this._senha;
+    }
+
     registerPassword(password){
         this.password = password;
     }
